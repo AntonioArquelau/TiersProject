@@ -17,4 +17,8 @@ public class EnemyController : MonoBehaviour {
 		rigid.velocity = teste/5;
 		Debug.Log (teste);	
 	}
+
+	void OnCollisionEnter(Collision obj){
+		gameObject.SetActive (false);
+	}
 }
