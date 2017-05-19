@@ -5,7 +5,7 @@ using UnityEngine;
 public class InstantiateEnemy : MonoBehaviour {
 	private GameObject bullet; 
 	private float spawTime = 2; 
-	private float x, y, z, raio=3;
+	private float x, y, z, raio = 3;
 	List<GameObject> inimigos;
 	private 
 	// Use this for initialization
@@ -26,9 +26,9 @@ public class InstantiateEnemy : MonoBehaviour {
 		for (int i = 0; i < 10; i++) 
 		{
 			if (!inimigos [i].activeInHierarchy) {
-				x = Random.Range (-raio, raio);
+				z = Random.Range (-raio, raio);
 				y =	Random.Range (-raio, raio);
-				z = raio*raio - (x*x) - (y*y); 
+				x =	Mathf.Sqrt( raio*raio - (z*z) - (y*y)); 
 				inimigos [i].transform.position = new Vector3 (x, y, z);
 				inimigos [i].SetActive (true);
 				break;
