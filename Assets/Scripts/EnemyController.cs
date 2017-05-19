@@ -7,10 +7,12 @@ public class EnemyController : MonoBehaviour {
 	private Transform playerTranform;
 	private float velocity = 10;
 	private Vector3 teste;
+	private ParticleSystem explosion;
 	private Rigidbody rigid;
 
 	// Use this for initialization
-	void Start () {
+	void OnEnable () {
+		explosion = gameObject.GetComponent<ParticleSystem> ();
 		rigid = gameObject.GetComponent<Rigidbody> ();
 		playerTranform = GameObject.Find ("Player").GetComponent<Transform> ();
 		teste = playerTranform.position - transform.position;
@@ -19,6 +21,13 @@ public class EnemyController : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision obj){
+		explosion.Play ();
+		gameObject.GetComponent<MeshRenderer> ().enabled = false;
+		Invoke ("Disable", 1f);
+	}
+
+	void Disable (){
 		gameObject.SetActive (false);
+		gameObject.GetComponent<MeshRenderer> ().enabled = true;
 	}
 }
