@@ -16,13 +16,13 @@ public class InstantiateEnemy : MonoBehaviour {
 		inimigos = new List<GameObject> ();
 	}
 
-	// começa o jogo
+	// começa o jogo, instancia os inimigos e os adiciona na lista de poll.
 	public void StartGame()
 	{
 		raycastCamera.GetComponent<RaycastCamera> ().text.GetComponent<Text>().text = "Score: 0";
 		if (inimigos.Count < 1) 
 		{
-			for (int i = 0; i < 10; i++) 
+			for (int i = 0; i < 10; i++)
 			{
 				GameObject ob = Instantiate (Resources.Load ("Enemy", typeof(GameObject))) as GameObject;
 				ob.SetActive (false);
@@ -44,6 +44,7 @@ public class InstantiateEnemy : MonoBehaviour {
 		}
 	}
 
+	//fecha a aplicação
 	public void CloseApllication()
 	{
 		Application.Quit ();

@@ -46,12 +46,14 @@ public class RaycastCamera : MonoBehaviour {
 		//verifica se a barra de carregamento esta completa e em que ele colidiu
 		if (load.fillAmount == 1) 
 		{
+			//verifica se a colisãao foi com o botão de start
 			if (hit.collider.gameObject.name == "Start") 
 			{
 				startEvent = hit.collider.GetComponent<RaycastInteractive> ();
 				startEvent.completeFill.Invoke ();
 				mira.localPosition = initialMiraPosition;	
 			} 
+			//verifica se a colisãao foi com o botão de exit
 			else if (hit.collider.gameObject.name == "Exit") 
 			{
 				mira.localPosition = initialMiraPosition;
@@ -60,6 +62,7 @@ public class RaycastCamera : MonoBehaviour {
 			} 
 			else 
 			{
+				//colisão realizada com os meteoros
 				points++;
 				text.GetComponent<Text>().text = "Score: " + points;
 				startEvent = hit.collider.GetComponent<RaycastInteractive> ();
