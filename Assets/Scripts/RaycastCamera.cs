@@ -14,7 +14,7 @@ public class RaycastCamera : MonoBehaviour {
 	public Transform mira;
 	public Vector3 initialMiraPosition;
 	void Start () {
-		initialMiraPosition = mira.position;
+		initialMiraPosition = mira.localPosition;
 	}
 
 	void Update () {
@@ -27,7 +27,6 @@ public class RaycastCamera : MonoBehaviour {
 				hit2 = hit.collider;
 				corrotina = LoadDestroy ();
 				StartCoroutine (corrotina);
-				Debug.Log (hit.collider.name);
 			}
 		} 
 		else 
@@ -37,26 +36,33 @@ public class RaycastCamera : MonoBehaviour {
 				StopCoroutine (corrotina);
 			}
 			load.fillAmount = 0;
-			mira.position = initialMiraPosition;
-
+			mira.localPosition = initialMiraPosition;
 		}
-
 		if (load.fillAmount == 1) {
-			startEvent = hit.collider.GetComponent<RaycastInteractive>();
-			startEvent.completeFill.Invoke ();
-			StopCoroutine (corrotina);
-			load.fillAmount = 0;
-			mira.position = initialMiraPosition;
+			if (hit.collider.gameObject.name == "Start") {
+				startEvent = hit.collider.GetComponent<RaycastInteractive> ();
+				startEvent.completeFill.Invoke ();
+			} 
+			else if (hit.collider.gameObject.name == "Exit") 
+			{
+				Debug.Log ("teste");
+			} 
+			else 
+			{
+				startEvent = hit.collider.GetComponent<RaycastInteractive> ();
+				startEvent.completeFill.Invoke ();
+				StopCoroutine (corrotina);
+				load.fillAmount = 0;
+				mira.localPosition = initialMiraPosition;
+			}
 		}
 
 	}
-
 	public void SetPosition (RaycastHit hit)
 	{
 		mira.position = hit.point;
 		mira.localScale = Vector3.one * hit.distance/10;
 	}
-
 	IEnumerator LoadDestroy(){
 		while (hit2 != null) 
 		{
@@ -64,5 +70,4 @@ public class RaycastCamera : MonoBehaviour {
 			yield return new WaitForSeconds (0.01f);
 		} 
 	}
-
 }

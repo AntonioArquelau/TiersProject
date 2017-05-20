@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour {
 	private Vector3 teste;
 	private ParticleSystem explosion;
 	private Rigidbody rigid;
+	private RaycastInteractive startEvent;
 
 	// Use this for initialization
 	void OnEnable () {
@@ -20,7 +21,8 @@ public class EnemyController : MonoBehaviour {
 	}
 
 	void OnCollisionEnter(Collision obj){
-		ResetEnemy ();
+		startEvent = obj.collider.GetComponent<RaycastInteractive> ();
+		startEvent.completeFill.Invoke ();
 	}
 
 	public void ResetEnemy(){
