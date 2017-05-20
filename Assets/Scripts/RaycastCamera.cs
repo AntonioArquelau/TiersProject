@@ -42,10 +42,13 @@ public class RaycastCamera : MonoBehaviour {
 			if (hit.collider.gameObject.name == "Start") {
 				startEvent = hit.collider.GetComponent<RaycastInteractive> ();
 				startEvent.completeFill.Invoke ();
+				mira.localPosition = initialMiraPosition;	
 			} 
 			else if (hit.collider.gameObject.name == "Exit") 
 			{
-				Debug.Log ("teste");
+				mira.localPosition = initialMiraPosition;
+				startEvent = hit.collider.GetComponent<RaycastInteractive> ();
+				startEvent.completeFill.Invoke ();
 			} 
 			else 
 			{

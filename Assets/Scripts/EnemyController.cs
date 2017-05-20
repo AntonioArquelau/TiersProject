@@ -6,7 +6,7 @@ public class EnemyController : MonoBehaviour {
 
 	private Transform playerTranform;
 	private float velocity = 10;
-	private Vector3 teste;
+	private Vector3 vetorDirecao;
 	private ParticleSystem explosion;
 	private Rigidbody rigid;
 	private RaycastInteractive startEvent;
@@ -16,8 +16,8 @@ public class EnemyController : MonoBehaviour {
 		explosion = gameObject.GetComponent<ParticleSystem> ();
 		rigid = gameObject.GetComponent<Rigidbody> ();
 		playerTranform = GameObject.Find ("Player").GetComponent<Transform> ();
-		teste = playerTranform.position - transform.position;
-		rigid.velocity = teste/5;
+		vetorDirecao = playerTranform.position - transform.position;
+		rigid.velocity = vetorDirecao/5;
 	}
 
 	void OnCollisionEnter(Collision obj){

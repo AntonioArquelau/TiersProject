@@ -33,6 +33,9 @@ public class InstantiateEnemy : MonoBehaviour {
 			inimigos[i].SetActive (false);
 		}
 	}
+	public void CloseApllication(){
+		Application.Quit ();
+	}
 
 	void Spaw()
 	{
@@ -41,7 +44,7 @@ public class InstantiateEnemy : MonoBehaviour {
 			if (!inimigos [i].activeInHierarchy) {
 				z = Random.Range (-raio, raio);
 				y =	Random.Range (-raio, raio);
-				x =	Mathf.Sqrt( raio*raio - (z*z) - (y*y)); 
+				x =	Mathf.Sqrt( raio*raio - ((z*z) + (y*y))); 
 				inimigos [i].transform.position = new Vector3 (x, y, z);
 				inimigos [i].SetActive (true);
 				break;
