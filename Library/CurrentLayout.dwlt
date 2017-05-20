@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 492}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -108,10 +108,10 @@ MonoBehaviour:
     y: 30
     width: 1366
     height: 635
-  m_MinSize: {x: 917, y: 442}
-  m_MaxSize: {x: 22012, y: 10021}
+  m_MinSize: {x: 913, y: 442}
+  m_MaxSize: {x: 22008, y: 10021}
   vertical: 0
-  controlID: 71
+  controlID: 70
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -135,7 +135,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 442}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 24
+  controlID: 12
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -154,8 +154,8 @@ MonoBehaviour:
     y: 0
     width: 655
     height: 323
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -182,8 +182,8 @@ MonoBehaviour:
     y: 323
     width: 655
     height: 312
-  m_MinSize: {x: 202, y: 221}
-  m_MaxSize: {x: 4002, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -399,9 +399,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -15.772364, y: -8.48404, z: 1.1318866}
+    m_Target: {x: -15.997436, y: -7.6616173, z: 4.7146244}
     speed: 2
-    m_Value: {x: -15.772364, y: -8.48404, z: 1.1318866}
+    m_Value: {x: -15.997436, y: -7.6616173, z: 4.7146244}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -426,11 +426,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.15253857, y: 0.6766772, z: -0.14635228, w: -0.70528084}
     speed: 2
-    m_Value: {x: -0.15253857, y: 0.6766772, z: -0.14635228, w: -0.70528084}
+    m_Value: {x: -0.15253858, y: 0.6766772, z: -0.14635228, w: -0.7052809}
   m_Size:
-    m_Target: 31.67387
+    m_Target: 27.45993
     speed: 2
-    m_Value: 31.67387
+    m_Value: 27.45993
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -538,23 +538,23 @@ MonoBehaviour:
     height: 614
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 62300000
-    m_LastClickedID: 12386
-    m_ExpandedIDs: 3c87fefff687feffe088feff186bffffc66cffffbcf5ffff78f6ffff54f7ffffe2fbffff0000000044260000582600006230000070300000803000008c300000
+    m_SelectedIDs: 
+    m_LastClickedID: 0
+    m_ExpandedIDs: e0fbffffe2fbffff00000000802500008825000098250000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Enemy
+      m_OriginalName: Enemy
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: -1890
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 0
       m_ClientGUIView: {fileID: 9}
     m_SearchString: 
@@ -600,19 +600,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Resources
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Resources
+  - Assets/Scripts
   m_LastFoldersGridSize: 16
   m_LastProjectPath: "C:\\Users\\Ant\xF4nio Arquelau\\Documents\\GitHub\\TiersProject"
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 16250000
-    m_LastClickedID: 9494
-    m_ExpandedIDs: 00000000b82400001425000000ca9a3bffffff7f
+    m_SelectedIDs: 4a250000
+    m_LastClickedID: 9546
+    m_ExpandedIDs: 00000000bc240000182500001a25000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -640,7 +640,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b82400000225000014250000
+    m_ExpandedIDs: 00000000bc24000018250000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -671,18 +671,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 000000005c9b00008c2200003832ffff20060000140500004422000048220000be1d0000881d0000981d00000e1c0000168afeff78550000681d0000a01d0000ee6f00004872000096c5ffff522600009c210000442300000053000022050000f80700008c0500002805000058230000a22300002aeffeff0e1d00006c39ffff201f00000a76fdff7629fcffa845fbff8a1c0000e4260000de270000a6260000ae2500004225000056240000f02200006c2100008c080000920500002c05000072250000802400008c290000322400003e220000a4260000a4230000502400008829000090290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: RaycastInteractive
-      m_OriginalName: RaycastInteractive
+      m_Name: 
+      m_OriginalName: 
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 11864
+      m_UserData: 0
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 0
+      m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_CreateAssetUtility:

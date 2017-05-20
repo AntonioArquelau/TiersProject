@@ -11,13 +11,17 @@ public class RaycastCamera : MonoBehaviour {
 	private RaycastInteractive startEvent;
 	private Collider hit2;
 	public Image load;
+	public Transform mira;
+	public Vector3 initialMiraPosition;
 	void Start () {
+		initialMiraPosition = mira.position;
 	}
 
 	void Update () {
 		ray = new Ray(gameObject.transform.position, gameObject.transform.forward);
 		if (Physics.Raycast (ray, out hit, alcance)) 
 		{
+			SetPosition (hit);
 			if (hit2 != hit.collider) 
 			{
 				hit2 = hit.collider;
@@ -29,8 +33,11 @@ public class RaycastCamera : MonoBehaviour {
 		else 
 		{
 			hit2 = null;
-			StopCoroutine (corrotina);
+			if (corrotina != null) {
+				StopCoroutine (corrotina);
+			}
 			load.fillAmount = 0;
+			mira.position = initialMiraPosition;
 
 		}
 
@@ -39,8 +46,15 @@ public class RaycastCamera : MonoBehaviour {
 			startEvent.completeFill.Invoke ();
 			StopCoroutine (corrotina);
 			load.fillAmount = 0;
+			mira.position = initialMiraPosition;
 		}
 
+	}
+
+	public void SetPosition (RaycastHit hit)
+	{
+		mira.position = hit.point;
+		mira.localScale = Vector3.one * hit.distance/10;
 	}
 
 	IEnumerator LoadDestroy(){
