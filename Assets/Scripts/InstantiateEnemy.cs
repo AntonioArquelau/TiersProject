@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class InstantiateEnemy : MonoBehaviour {
 	private GameObject bullet; 
-	private float spawTime = 2; 
-	private float x, y, z, raio = 3;
+	private float spawTime = 5; 
+	private float x, y, z, raio = 10;
 	List<GameObject> inimigos;
 	private 
 	// Use this for initialization

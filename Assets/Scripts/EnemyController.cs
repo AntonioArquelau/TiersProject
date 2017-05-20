@@ -17,14 +17,18 @@ public class EnemyController : MonoBehaviour {
 		playerTranform = GameObject.Find ("Player").GetComponent<Transform> ();
 		teste = playerTranform.position - transform.position;
 		rigid.velocity = teste/5;
-		Debug.Log (teste);	
 	}
 
 	void OnCollisionEnter(Collision obj){
+		ResetEnemy ();
+	}
+
+	public void ResetEnemy(){
 		explosion.Play ();
 		gameObject.GetComponent<MeshRenderer> ().enabled = false;
 		Invoke ("Disable", 1f);
 	}
+
 
 	void Disable (){
 		gameObject.SetActive (false);
