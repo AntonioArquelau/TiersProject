@@ -13,11 +13,14 @@ public class RaycastCamera : MonoBehaviour {
 	public Image load;
 	public Transform mira;
 	public Vector3 initialMiraPosition;
+	public int points = 0;
+	public GameObject text;
 	void Start () {
 		initialMiraPosition = mira.localPosition;
 	}
 
-	void Update () {
+	void Update () 
+	{
 		ray = new Ray(gameObject.transform.position, gameObject.transform.forward);
 		if (Physics.Raycast (ray, out hit, alcance)) 
 		{
@@ -32,14 +35,17 @@ public class RaycastCamera : MonoBehaviour {
 		else 
 		{
 			hit2 = null;
-			if (corrotina != null) {
+			if (corrotina != null) 
+			{
 				StopCoroutine (corrotina);
 			}
 			load.fillAmount = 0;
 			mira.localPosition = initialMiraPosition;
 		}
-		if (load.fillAmount == 1) {
-			if (hit.collider.gameObject.name == "Start") {
+		if (load.fillAmount == 1) 
+		{
+			if (hit.collider.gameObject.name == "Start") 
+			{
 				startEvent = hit.collider.GetComponent<RaycastInteractive> ();
 				startEvent.completeFill.Invoke ();
 				mira.localPosition = initialMiraPosition;	
@@ -52,11 +58,14 @@ public class RaycastCamera : MonoBehaviour {
 			} 
 			else 
 			{
+				points++;
+				text.GetComponent<Text>().text = "Score: " + points;
 				startEvent = hit.collider.GetComponent<RaycastInteractive> ();
 				startEvent.completeFill.Invoke ();
 				StopCoroutine (corrotina);
 				load.fillAmount = 0;
 				mira.localPosition = initialMiraPosition;
+				mira.localScale = Vector3.one;
 			}
 		}
 
@@ -66,7 +75,8 @@ public class RaycastCamera : MonoBehaviour {
 		mira.position = hit.point;
 		mira.localScale = Vector3.one * hit.distance/10;
 	}
-	IEnumerator LoadDestroy(){
+	IEnumerator LoadDestroy()
+	{
 		while (hit2 != null) 
 		{
 			load.fillAmount += 0.02f; 

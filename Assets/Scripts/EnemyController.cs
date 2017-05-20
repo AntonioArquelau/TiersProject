@@ -11,8 +11,10 @@ public class EnemyController : MonoBehaviour {
 	private Rigidbody rigid;
 	private RaycastInteractive startEvent;
 
+
 	// Use this for initialization
-	void OnEnable () {
+	void OnEnable () 
+	{
 		explosion = gameObject.GetComponent<ParticleSystem> ();
 		rigid = gameObject.GetComponent<Rigidbody> ();
 		playerTranform = GameObject.Find ("Player").GetComponent<Transform> ();
@@ -20,12 +22,14 @@ public class EnemyController : MonoBehaviour {
 		rigid.velocity = vetorDirecao/5;
 	}
 
-	void OnCollisionEnter(Collision obj){
+	void OnCollisionEnter(Collision obj)
+	{
 		startEvent = obj.collider.GetComponent<RaycastInteractive> ();
 		startEvent.completeFill.Invoke ();
 	}
 
-	public void ResetEnemy(){
+	public void ResetEnemy()
+	{
 		explosion.Play ();
 		gameObject.GetComponent<MeshRenderer> ().enabled = false;
 		gameObject.GetComponent<Collider> ().enabled = false;
@@ -33,7 +37,8 @@ public class EnemyController : MonoBehaviour {
 	}
 
 
-	void Disable (){
+	void Disable ()
+	{
 		gameObject.SetActive (false);
 		gameObject.GetComponent<MeshRenderer> ().enabled = true;
 		gameObject.GetComponent<Collider> ().enabled = true;
