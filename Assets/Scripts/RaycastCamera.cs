@@ -21,6 +21,7 @@ public class RaycastCamera : MonoBehaviour {
 
 	void Update () 
 	{
+		//verifica se o jogador esta olhando para algum objeto
 		ray = new Ray(gameObject.transform.position, gameObject.transform.forward);
 		if (Physics.Raycast (ray, out hit, alcance)) 
 		{
@@ -42,6 +43,7 @@ public class RaycastCamera : MonoBehaviour {
 			load.fillAmount = 0;
 			mira.localPosition = initialMiraPosition;
 		}
+		//verifica se a barra de carregamento esta completa e em que ele colidiu
 		if (load.fillAmount == 1) 
 		{
 			if (hit.collider.gameObject.name == "Start") 
@@ -70,11 +72,14 @@ public class RaycastCamera : MonoBehaviour {
 		}
 
 	}
+	// ajusta a posição da mirapara que ela sempre fique 
+	//na frente dos objetos porém nao modifique seu tamanho
 	public void SetPosition (RaycastHit hit)
 	{
 		mira.position = hit.point;
 		mira.localScale = Vector3.one * hit.distance/10;
 	}
+	//carrega a barra de load para a colisão
 	IEnumerator LoadDestroy()
 	{
 		while (hit2 != null) 

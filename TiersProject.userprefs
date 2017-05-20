@@ -1,11 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\RaycastCamera.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\InstantiateEnemy.cs">
     <Files>
-      <File FileName="Assets\Scripts\EnemyController.cs" Line="41" Column="2" />
-      <File FileName="Assets\Scripts\InstantiateEnemy.cs" Line="55" Column="4" />
-      <File FileName="Assets\Scripts\RaycastInteractive.cs" Line="7" Column="33" />
-      <File FileName="Assets\Scripts\RaycastCamera.cs" Line="47" Column="49" />
+      <File FileName="Assets\Scripts\EnemyController.cs" Line="38" Column="3" />
+      <File FileName="Assets\Scripts\InstantiateEnemy.cs" Line="19" Column="18" />
+      <File FileName="Assets\Scripts\RaycastInteractive.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\RaycastCamera.cs" Line="82" Column="42" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

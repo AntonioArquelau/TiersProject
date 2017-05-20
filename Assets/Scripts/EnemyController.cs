@@ -11,8 +11,7 @@ public class EnemyController : MonoBehaviour {
 	private Rigidbody rigid;
 	private RaycastInteractive startEvent;
 
-
-	// Use this for initialization
+	// inicialização dos inimigos para irem em direção ao player
 	void OnEnable () 
 	{
 		explosion = gameObject.GetComponent<ParticleSystem> ();
@@ -28,6 +27,7 @@ public class EnemyController : MonoBehaviour {
 		startEvent.completeFill.Invoke ();
 	}
 
+	//reseta o inimigo para ser utilizado novamente
 	public void ResetEnemy()
 	{
 		explosion.Play ();
@@ -35,8 +35,7 @@ public class EnemyController : MonoBehaviour {
 		gameObject.GetComponent<Collider> ().enabled = false;
 		Invoke ("Disable", 1f);
 	}
-
-
+		
 	void Disable ()
 	{
 		gameObject.SetActive (false);

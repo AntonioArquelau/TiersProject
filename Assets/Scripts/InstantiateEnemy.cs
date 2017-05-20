@@ -16,6 +16,7 @@ public class InstantiateEnemy : MonoBehaviour {
 		inimigos = new List<GameObject> ();
 	}
 
+	// começa o jogo
 	public void StartGame()
 	{
 		raycastCamera.GetComponent<RaycastCamera> ().text.GetComponent<Text>().text = "Score: 0";
@@ -31,6 +32,7 @@ public class InstantiateEnemy : MonoBehaviour {
 		InvokeRepeating ("Spaw", 0, spawTime);
 	}
 
+	//para o jogo e desabilita o spaw de inimigos
 	public void EndGame()
 	{
 		raycastCamera.GetComponent<RaycastCamera> ().points = 0;
@@ -47,6 +49,7 @@ public class InstantiateEnemy : MonoBehaviour {
 		Application.Quit ();
 	}
 
+	// habilita um inimigo e o posiciona na superficie de uma esfera de raio 10
 	void Spaw()
 	{
 		for (int i = 0; i < 10; i++) 
